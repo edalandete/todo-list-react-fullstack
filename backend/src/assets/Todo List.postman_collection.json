@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "2f1e8de5-73ec-4cec-a0be-97cf2771a805",
+		"name": "Todo List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2021/api/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2021",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Aprender a tocar grita\",\n    \"isFinished\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2021/api/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2021",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2021/api/tasks/609cfc7c19d35379643a5b59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2021",
+					"path": [
+						"api",
+						"tasks",
+						"609cfc7c19d35379643a5b59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2021/api/tasks/609d371af4cf1484c4779ae2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2021",
+					"path": [
+						"api",
+						"tasks",
+						"609d371af4cf1484c4779ae2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Comer Natillas de Santi\",\n    \"isFinished\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2021/api/tasks/609cfa8237b19f7890475e8d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2021",
+					"path": [
+						"api",
+						"tasks",
+						"609cfa8237b19f7890475e8d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
