@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import {
-  loadTasks, createTask, deleteTask, updateTask,
+  loadTasks, createTask, deleteTask, updateTask
 } from './actionCreators';
 
 jest.mock('axios');
@@ -10,7 +10,7 @@ describe('Given a loadTasks action creator', () => {
   describe('When it is called by the dispatcher and the response is OK', () => {
     test('Then should load a list of tasks', async () => {
       const tasks = {
-        data: [{ name: 'task 1' }],
+        data: [{ name: 'task 1' }]
       };
 
       axios.mockResolvedValue(tasks);
@@ -21,8 +21,8 @@ describe('Given a loadTasks action creator', () => {
       expect(dispatch).toHaveBeenCalledWith(
         {
           type: actionTypes.LOAD_TASKS,
-          tasks: [{ name: 'task 1' }],
-        },
+          tasks: [{ name: 'task 1' }]
+        }
       );
     });
   });
@@ -36,8 +36,8 @@ describe('Given a loadTasks action creator', () => {
 
       expect(dispatch).toHaveBeenCalledWith(
         {
-          type: actionTypes.LOAD_TASKS_ERROR,
-        },
+          type: actionTypes.LOAD_TASKS_ERROR
+        }
       );
     });
   });
@@ -48,8 +48,8 @@ describe('Given a createTask action creator', () => {
     test('Then should create a new task', async () => {
       const task = {
         data: {
-          name: 'New task',
-        },
+          name: 'New task'
+        }
       };
 
       axios.post.mockResolvedValue(task);
@@ -59,7 +59,7 @@ describe('Given a createTask action creator', () => {
 
       expect(dispatch).toHaveBeenCalledWith({
         type: actionTypes.ADD_TASK,
-        task: task.data,
+        task: task.data
       });
     });
 
@@ -71,7 +71,7 @@ describe('Given a createTask action creator', () => {
         await createTask()(dispatch);
 
         expect(dispatch).toHaveBeenCalledWith({
-          type: actionTypes.ADD_TASK_ERROR,
+          type: actionTypes.ADD_TASK_ERROR
         });
       });
     });
@@ -87,7 +87,7 @@ describe('Given a deleteTask action creator', () => {
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.DELETE_TASK,
-      taskId: 1,
+      taskId: 1
     });
   });
 
@@ -98,7 +98,7 @@ describe('Given a deleteTask action creator', () => {
     await deleteTask()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.DELETE_TASK_ERROR,
+      type: actionTypes.DELETE_TASK_ERROR
     });
   });
 });
@@ -108,8 +108,8 @@ describe('Given a updateTask action creator', () => {
     const task = {
       data: {
         name: 'Upated task',
-        isFinished: true,
-      },
+        isFinished: true
+      }
     };
     axios.put.mockResolvedValue(task);
     const dispatch = jest.fn();
@@ -118,7 +118,7 @@ describe('Given a updateTask action creator', () => {
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.UPDATE_TASK,
-      task: task.data,
+      task: task.data
     });
   });
 
@@ -129,7 +129,7 @@ describe('Given a updateTask action creator', () => {
     await updateTask()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.UPDATE_TASK_ERROR,
+      type: actionTypes.UPDATE_TASK_ERROR
     });
   });
 });

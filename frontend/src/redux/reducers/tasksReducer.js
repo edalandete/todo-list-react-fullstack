@@ -13,14 +13,14 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.ADD_TASK:
       newTasks = [
         ...newTasks,
-        action.task,
+        action.task
       ];
       break;
     case actionTypes.UPDATE_TASK:
       newTasks = newTasks.map(
         (task) => (task._id === action.task._id
           ? { ...task, ...action.task }
-          : task),
+          : task)
       );
       break;
     default:
