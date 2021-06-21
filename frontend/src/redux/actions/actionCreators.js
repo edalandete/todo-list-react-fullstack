@@ -9,11 +9,11 @@ export const loadTasks = () => async (dispatch) => {
     const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_TASKS,
-      tasks: data,
+      tasks: data
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.LOAD_TASKS_ERROR,
+      type: actionTypes.LOAD_TASKS_ERROR
     });
   }
 };
@@ -24,11 +24,11 @@ export const createTask = (task) => async (dispatch) => {
     const { data } = await axios.post(url, newTask);
     dispatch({
       type: actionTypes.ADD_TASK,
-      task: data,
+      task: data
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.ADD_TASK_ERROR,
+      type: actionTypes.ADD_TASK_ERROR
     });
   }
 };
@@ -38,11 +38,11 @@ export const deleteTask = (taskId) => async (dispatch) => {
     await axios.delete(`${url}${taskId}`);
     dispatch({
       type: actionTypes.DELETE_TASK,
-      taskId,
+      taskId
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.DELETE_TASK_ERROR,
+      type: actionTypes.DELETE_TASK_ERROR
     });
   }
 };
@@ -52,11 +52,11 @@ export const updateTask = (task) => async (dispatch) => {
     const { data } = await axios.put(`${url}${task._id}`, task);
     dispatch({
       type: actionTypes.UPDATE_TASK,
-      task: data,
+      task: data
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.UPDATE_TASK_ERROR,
+      type: actionTypes.UPDATE_TASK_ERROR
     });
   }
 };

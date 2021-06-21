@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TaskListItem from '../TaskListItem/index';
 import {
-  deleteTask, loadTasks, createTask, updateTask,
+  deleteTask, loadTasks, createTask, updateTask
 } from '../../redux/actions/actionCreators';
 
 import './styles.css';
@@ -84,14 +84,14 @@ function TasksList({ tasks, dispatch }) {
 
 TasksList.propTypes = {
   tasks: PropTypes.arrayOf(
-    PropTypes.shape({}),
+    PropTypes.shape({})
   ).isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps({ tasks }) {
   return {
-    tasks,
+    tasks
   };
 }
 export default connect(mapStateToProps)(TasksList);

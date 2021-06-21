@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const TaskListItem = ({
-  task, itemKey, deleteHandler, updateHandler, editHandler,
+  task, itemKey, deleteHandler, updateHandler, editHandler
 }) => (
   <li key={itemKey} className="item">
     {' '}
@@ -23,14 +23,14 @@ TaskListItem.propTypes = {
   task: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    isFinished: PropTypes.bool.isRequired,
+    isFinished: PropTypes.bool.isRequired
   }).isRequired,
 
   itemKey: PropTypes.string.isRequired,
 
   deleteHandler: PropTypes.func.isRequired,
   updateHandler: PropTypes.func.isRequired,
-  editHandler: PropTypes.func.isRequired,
+  editHandler: PropTypes.func.isRequired
 
 };
 
